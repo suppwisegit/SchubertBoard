@@ -1,0 +1,38 @@
+{
+  "tasks": [
+    {
+      "title": "Wäsche machen",
+      "description": "Wäsche waschen und aufhängen",
+      "priority": "medium",
+      "assignee": "Alle",
+      "id": "g9a99ir",
+      "status": "completed",
+      "comments": [],
+      "createdAt": "2026-03-25T21:50:54.011Z"
+    }
+  ],
+  "activities": [
+    {
+      "id": "mtkw7oz",
+      "type": "status_update",
+      "title": "🎉 Status: erledigt",
+      "content": "\"Wäsche machen\" (Alle) ist jetzt erledigt.",
+      "timestamp": "2026-03-25T21:51:22.406Z"
+    },
+    {
+      "id": "0d9wyth",
+      "type": "status_update",
+      "title": "⏳ Status: in Arbeit",
+      "content": "\"Wäsche machen\" (Alle) ist jetzt in Arbeit.",
+      "timestamp": "2026-03-25T21:51:16.684Z"
+    },
+    {
+      "id": "3z1qcq4",
+      "type": "new_task",
+      "title": "🚀 Neue Aufgabe",
+      "content": "Alle hat eine neue Aufgabe: \"Wäsche machen\"",
+      "timestamp": "2026-03-25T21:50:54.014Z"
+    }
+  ],
+  "announcements": []
+}
