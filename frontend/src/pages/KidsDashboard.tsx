@@ -1,7 +1,7 @@
 import { useState, useCallback } from 'react';
 import { useSocket } from '../context/SocketContext';
 import { motion, AnimatePresence } from 'framer-motion';
-import { MessageSquare, CheckCircle, Clock, Circle, Send } from 'lucide-react';
+import { CheckCircle, Clock, Circle, Send } from 'lucide-react';
 import './KidsDashboard.css';
 
 // ─── Helpers ─────────────────────────────────────────────────────────
