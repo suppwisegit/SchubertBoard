@@ -147,6 +147,12 @@ io.on('connection', (socket) => {
   socket.on('disconnect', () => console.log(`🔴 Disconnected: ${socket.id}`));
 });
 
+// Statische Dateien aus dem Frontend-Build servieren
+app.use(express.static(path.join(__dirname, '../../frontend/dist')));
+app.get('*', (_req, res) => {
+  res.sendFile(path.join(__dirname, '../../frontend/dist/index.html'));
+});
+
 const PORT = process.env.PORT || 3001;
 httpServer.listen(PORT, () => {
   console.log(`\n  🏂 SchubertBoard Server running on http://localhost:${PORT}\n`);
