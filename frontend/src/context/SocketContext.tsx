@@ -76,7 +76,7 @@ export const SocketProvider = ({ children }: { children: ReactNode }) => {
   }, []);
 
   useEffect(() => {
-    const newSocket = io('http://localhost:3001');
+    const newSocket = io(window.location.origin);
     setSocket(newSocket);
 
     newSocket.on('connect', () => setIsConnected(true));
