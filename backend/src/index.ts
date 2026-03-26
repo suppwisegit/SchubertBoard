@@ -130,8 +130,9 @@ io.on('connection', (socket) => {
 
   socket.on('delete_task', (id: string) => {
     const idx = tasks.findIndex(t => t.id === id);
-    if (idx !== -1) {
-      const title = tasks[idx].title;
+    const task = tasks[idx];
+    if (idx !== -1 && task) {
+      const title = task.title;
       tasks.splice(idx, 1);
       io.emit('task_deleted', id);
       addActivity('deleted', '🗑️ Gelöscht', `"${title}" wurde entfernt.`);
@@ -149,7 +150,7 @@ io.on('connection', (socket) => {
 
 // Statische Dateien aus dem Frontend-Build servieren
 app.use(express.static(path.join(__dirname, '../../frontend/dist')));
-app.get('*', (_req, res) => {
+app.get(/(.*)/, (_req, res) => {
   res.sendFile(path.join(__dirname, '../../frontend/dist/index.html'));
 });
 
