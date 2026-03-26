@@ -39,8 +39,8 @@ const ParentDashboard = () => {
 
   const handleCreateTask = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!newTask.title || !newTask.assignee) return;
-    createTask(newTask);
+    if (!newTask.title) return;
+    createTask({ ...newTask, assignee: newTask.assignee.trim() || 'Alle' });
     setNewTask({ title: '', description: '', priority: 'medium', assignee: '' });
   };
 
@@ -103,8 +103,8 @@ const ParentDashboard = () => {
                 <option value="medium">🟡 Mittel</option>
                 <option value="high">🔴 Hoch</option>
               </select>
-              <input type="text" placeholder="Zugewiesen an (Name)" value={newTask.assignee}
-                onChange={e => setNewTask({...newTask, assignee: e.target.value})} required />
+              <input type="text" placeholder="Zugewiesen an (leer = Alle)" value={newTask.assignee}
+                onChange={e => setNewTask({...newTask, assignee: e.target.value})} />
             </div>
             <button type="submit" className="primary full-width">
               <PlusCircle size={18} /> Aufgabe erstellen
